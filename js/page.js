@@ -44,7 +44,7 @@ function getHeader() {
                 </button>
             </li>
             <li>
-              <details class="dropdown">
+              <details class="dropdown" style="margin-top: 0; margin-bottom: 0;">
                 <summary>
                   TorLand
                 </summary>
