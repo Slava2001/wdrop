@@ -97,6 +97,7 @@ body {
 }
 
 .language_button {
+    height: 0.7rem;
     font-size: 0.7rem;
     text-align: left;
     display: flex;
