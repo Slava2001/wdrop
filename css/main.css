@@ -20,9 +20,9 @@
 }
 
 /* Use this rule to customize default pico theme */
-/* For example 
+/* For example
 :root:not([data-theme]) {
-    --pico-background-color: green; 
+    --pico-background-color: green;
     --pico-primary: red;
 }
 */
@@ -31,13 +31,17 @@
 @media only screen and (prefers-color-scheme: dark) {
 
     /* Use this rule to customize default dark theme */
-    /* For example 
+    /* For example
     :root:not([data-theme]) {
-        --pico-background-color: green; 
+        --pico-background-color: green;
         --pico-primary: red;
     }
     */
     :root:not([data-theme]) {}
+}
+
+html {
+    font-size: 12px;
 }
 
 html,
@@ -94,7 +98,7 @@ body {
 
 .language_button {
     height: 24.5px;
-    font-size: 70%;
+    font-size: 0.7rem;
     text-align: left;
     display: flex;
     align-items: center;

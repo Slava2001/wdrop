@@ -30,7 +30,7 @@ function getHeader() {
                 <img class="github-link" width="70%" height="70%" src="/svg/github.svg" style="vertical-align:middle">
             </a>
             <a href="https://github.com/Slava2001" class="humble">
-            <span style="font-size:160%;">GitHub</span>
+            <span style="font-size:1.6rem%;">GitHub</span>
             </a>
         </ul>
 
@@ -97,13 +97,13 @@ function getFooter() {
         <section style="display: flex; justify-content: space-between;">
             <div style="flex: 1 1 0px;"></div>
             <div style="flex: 1 1 0px; margin-right: 10vw">
-                <p style="display: inline">E-mail: slavakaplya20011501@gmail.com</p>  
+                <p style="display: inline">E-mail: slavakaplya20011501@gmail.com</p>
                 <i id="main_email_copy_button" class="si-copy clickable responsive_container"
-                style="font-size: 32px; object-fit: contain;" onclick="navigator.clipboard.writeText('slavakaplya20011501@gmail.com');"></i>      
+                style="font-size: 1rem; object-fit: contain;" onclick="navigator.clipboard.writeText('slavakaplya20011501@gmail.com');"></i>
             </div>
             <div class="responsive_container" style="margin-left:10px; display: inline; float:right;">
                 <a href="https://github.com/nikonru/" class="humble">
-                    <span style="font-size:100%; vertical-align:middle">Designed by nikonru</span>
+                    <span style="font-size:1rem; vertical-align:middle">Designed by nikonru</span>
                 </a>
                 <a href="https://github.com/nikonru/",  style="margin-right:-25px;">
                     <img  class="github-link" width="10%" height="10%" src="/svg/github.svg" style="vertical-align:middle">
