@@ -27,7 +27,7 @@ function getHeader() {
     <nav>
         <ul class="responsive_container" style="margin-left:10px;">
             <a href="https://github.com/Slava2001",  style="margin-right:-25px;">
-                <img class="github-link" width="70%" height="70%" src="/svg/github.svg" style="vertical-align:middle">
+                <img class="github-link" width="70%" height="70%" src="/image/svg/github.svg" style="vertical-align:middle">
             </a>
             <a href="https://github.com/Slava2001" class="humble">
             <span style="font-size:1.6rem%;">GitHub</span>
@@ -106,7 +106,7 @@ function getFooter() {
                     <span style="font-size:1rem; vertical-align:middle">Designed by nikonru</span>
                 </a>
                 <a href="https://github.com/nikonru/",  style="margin-right:-25px;">
-                    <img  class="github-link" width="10%" height="10%" src="/svg/github.svg" style="vertical-align:middle">
+                    <img  class="github-link" width="10%" height="10%" src="/image/svg/github.svg" style="vertical-align:middle">
                 </a>
             </div>
         </section>`
