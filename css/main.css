@@ -19,27 +19,6 @@
     font-family: 'Rubik';
 }
 
-/* Use this rule to customize default pico theme */
-/* For example
-:root:not([data-theme]) {
-    --pico-background-color: green;
-    --pico-primary: red;
-}
-*/
-:root:not([data-theme]) {}
-
-@media only screen and (prefers-color-scheme: dark) {
-
-    /* Use this rule to customize default dark theme */
-    /* For example
-    :root:not([data-theme]) {
-        --pico-background-color: green;
-        --pico-primary: red;
-    }
-    */
-    :root:not([data-theme]) {}
-}
-
 html {
     font-size: 14px;
 }
@@ -74,19 +53,6 @@ body {
 
 }
 
-@media (prefers-color-scheme: dark) {
-    :root:not([data-theme]) .black-img {
-        -webkit-filter: invert(100%);
-        /* safari 6.0 - 9.0 */
-        filter: invert(100%);
-    }
-
-    :root:not([data-theme]) .github-link {
-        -webkit-filter: invert(100%);
-        /* safari 6.0 - 9.0 */
-        filter: invert(100%);
-    }
-}
 
 .humble,
 .humble:hover,
@@ -143,4 +109,8 @@ body {
 .disabled-button {
     background-color: gainsboro;
     --pico-border-color: darkslategray;
+}
+
+.inverted img.svg-inverted {
+    filter: invert(100%)
 }

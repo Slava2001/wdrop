@@ -13,6 +13,7 @@
     <script type="text/javascript" src="/js/page.js"></script>
     <script type="text/javascript" src="/js/language.js"></script>
     <script type="text/javascript" src="/js/cookies.js"></script>
+    <script type="text/javascript" src="/js/theme.js"></script>
 
     <script type="module" src="./world.js"></script>
     <script type="text/javascript" src="./config.js"></script>
@@ -81,7 +82,16 @@
                         <div class="grid">
                             <label class="center-label" lang="ru" title="описание">Тип мира</label>
                             <label class="center-label" lang="en" title="descriptor">World type</label>
-                            <input type="text" id="word_type"></input>
+                            <select id="word_type" lang="ru">
+                                <option value="Uniform">Равномерный</option>
+                                <option value="Linear">Линейный</option>
+                                <option selected value="Clustered">Кластеризованный</option>
+                            </select>
+                            <select id="word_type" lang="en">
+                                <option value="Uniform">Uniform</option>
+                                <option value="Linear">Linear</option>
+                                <option selected value="Clustered">Clustered</option>
+                            </select>
                         </div>
                         <div class="grid">
                             <label class="center-label" lang="ru" title="описание">Число кластеров</label>
