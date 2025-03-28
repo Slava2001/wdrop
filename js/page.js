@@ -12,6 +12,9 @@ function onLoad(event) {
     var color_theme = getCookie('color_theme');
     if (!color_theme) {
         color_theme = 'light';
+        if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+            color_theme = 'dark';
+        }
     }
     initThemeSwitcher(color_theme);
 }
