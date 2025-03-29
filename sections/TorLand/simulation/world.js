@@ -4,8 +4,9 @@ init();
 const canvas = document.getElementById("canvas");
 const bot_code = document.getElementById("bot_code");
 const fps = document.getElementById("fps");
-
 const start_btn = document.getElementById("start_btn");
+const coler = document.getElementById('coler');
+const lmb_action = document.getElementById('action');
 
 let background;
 let world;
@@ -15,20 +16,10 @@ let world_size_y;
 
 function render_word() {
     canvas.getContext("2d").drawImage(background, 0, 0);
-
-    const coler = document.getElementById(colerId);
     world.draw(canvas.getContext("2d"), coler.value);
 }
 
-const coler_ru = document.getElementById("coler_ru");
-coler_ru.onchange = () => {
-    if (world) {
-        render_word();
-    }
-}
-
-const coler_en = document.getElementById("coler_en");
-coler_en.onchange = () => {
+coler.onchange = () => {
     if (world) {
         render_word();
     }
@@ -60,7 +51,7 @@ function run() {
     background = new Image();
     background.src = canvas.toDataURL();
     clearTimeout(timer);
-    start_btn.innerHTML = startLabel;
+    setElemTranslatedText(start_btn, "start_btn");
     start_btn.classList.remove("stop-button");
     start_btn.classList.remove("disabled-button");
     start_btn.classList.add("start-button");
@@ -75,7 +66,6 @@ function on_click(e) {
     const x = Math.floor((e.clientX - rect.left) * world_size_x / rect.width);
     const y = Math.floor((e.clientY - rect.top) * world_size_y / rect.height);
 
-    const lmb_action = document.getElementById(actionId);
     if (lmb_action.value == "place") {
         world.spawn(x, y, bot_code.value);
         render_word();
@@ -91,7 +81,7 @@ function on_start_btn_click(e) {
         return;
     }
     if (start_btn.innerHTML == startLabel) {
-        start_btn.innerHTML = stopLabel;
+        setElemTranslatedText(start_btn, "stop_btn");
         start_btn.classList.add("stop-button");
         start_btn.classList.remove("start-button");
 
