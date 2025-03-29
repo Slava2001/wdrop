@@ -1,1 +1,42 @@
 #,ru,en
+create_world,Создать мир,Create world
+start_btn,Старт,Start
+stop_btn,Стоп,Stop
+bot_code,Код бота,Bot's code
+world,Мир,World
+max_illum,Максимальная освещённость,Maximal illumination
+max_miner,Максимальная минерализация,Maximal mineralization
+height,Высота,Height
+width,Ширина,Width
+world_type,Тип мира,World type
+number_of_clusters,Число кластеров,Number of clusters
+rules,Правила,Rules
+max_cmd_per_cycle,Максимальное число комманд за цикл,Maximum number of commands per cycle
+energy_per_split,Рассход энергия за деление,Energy consumption per split
+energy_per_sun,Энергия от Солцна,Energy from the Sun
+energy_per_minerals,Энергия от минералов,Energy from the minerals
+energy_per_step,Рассход энергии за шаг,Energy consumption per step
+age_debuf,Штраф к энергии за возраст,Penalty to energy for the age
+start_energy,Энергия на старте,Start energy
+energy_per_byte,Поглощение энергии при укусе,Energy consumption with bite
+max_energy,Максимум энергии,Maximum energy
+max_rand_val,Максимальное случайное значение,Maximum random value
+mut_ver,Вероятность мутации,Mutation probability
+free_space_boots,Коэффициент свободного места,Free space coefficient
+colony_boots,Коэффициент колонии,Colony coefficient
+bot_boots,Коэффициент соседства,Neighbor coefficient
+drawing_mode,Режим,Mode
+lmb,ЛКМ,LMB
+uniform,Равномерный,Uniform
+linear,Линейный,Linear
+clustered,Кластеризованный,Clustered
+colony,Колония,Colony
+genome,Геном,Genome
+age,Возраст,Age
+energy,Энергия,Energy
+red,Красный,Red
+green,Зелёный,Green
+blue,Синий,Blue
+create_bot,Создать бота,Create a bot
+catch_genome,Захватить геном,Catch a genome
+invalid_bot_code, Не удалось создать бота: задан невалидный код бота, Failed to create bot: specified invalid bot code

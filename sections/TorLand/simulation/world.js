@@ -67,8 +67,13 @@ function on_click(e) {
     const y = Math.floor((e.clientY - rect.top) * world_size_y / rect.height);
 
     if (lmb_action.value == "place") {
-        world.spawn(x, y, bot_code.value);
-        render_word();
+        const BASE32_REGEX = /^([A-Z2-7=])+$/;
+        if (BASE32_REGEX.test(bot_code.value)) {
+            world.spawn(x, y, bot_code.value);
+            render_word();
+        } else {
+            alert(getTranslatedText("invalid_bot_code"));
+        }
     } else {
         bot_code.value = world.get_bot(x, y);
         setCookie("bot_code", bot_code.value, 3);
@@ -76,19 +81,18 @@ function on_click(e) {
 }
 canvas.onclick = on_click
 
-function on_start_btn_click(e) {
+function on_start_btn_click(_e) {
     if (!world) {
         return;
     }
-    if (start_btn.innerHTML == startLabel) {
+    if (getElemTranslatedText(start_btn) == "start_btn") {
         setElemTranslatedText(start_btn, "stop_btn");
         start_btn.classList.add("stop-button");
         start_btn.classList.remove("start-button");
-
         clearTimeout(timer);
         update();
     } else {
-        start_btn.innerHTML = startLabel;
+        setElemTranslatedText(start_btn, "start_btn");
         start_btn.classList.add("start-button");
         start_btn.classList.remove("stop-button");
         clearTimeout(timer);

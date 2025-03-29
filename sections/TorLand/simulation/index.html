@@ -56,129 +56,93 @@
             </div>
             <div class="controls">
                 <div id="init_cfg" style="overflow-y: scroll; height:44vh; margin-bottom: 1vh;">
-                    <label class="center-label" lang="en">World</label>
-                    <label class="center-label" lang="ru">Мир</label>
+                    <label class="center-label" translated_text_id="world"></label>
                     <div style="padding-left:28px;">
                         <div class="grid">
-                            <label class="center-label" lang="ru" title="описание">Максимальная освещённость</label>
-                            <label class="center-label" lang="en" title="descriptor">Maximal illumination</label>
+                            <label class="center-label" translated_text_id="max_illum"></label>
                             <input type="text" id="sun_max_lvl"></input>
                         </div>
                         <div class="grid">
-                            <label class="center-label" lang="ru" title="описание">Максимальная минерализация</label>
-                            <label class="center-label" lang="en" title="descriptor">Maximal mineralization</label>
+                            <label class="center-label" translated_text_id="max_miner"></label>
                             <input type="text" id="mineral_max_lvl"></input>
                         </div>
                         <div class="grid">
-                            <label class="center-label" lang="ru" title="описание">Высота</label>
-                            <label class="center-label" lang="en" title="descriptor">Height</label>
+                            <label class="center-label" translated_text_id="height"></label>
                             <input type="text" id="height"></input>
                         </div>
                         <div class="grid">
-                            <label class="center-label" lang="ru" title="описание">Ширина</label>
-                            <label class="center-label" lang="en" title="descriptor">Width</label>
+                            <label class="center-label" translated_text_id="width"></label>
                             <input type="text" id="width"></input>
                         </div>
                         <div class="grid">
-                            <label class="center-label" lang="ru" title="описание">Тип мира</label>
-                            <label class="center-label" lang="en" title="descriptor">World type</label>
-                            <select id="word_type" lang="ru">
-                                <option value="Uniform">Равномерный</option>
-                                <option value="Linear">Линейный</option>
-                                <option selected value="Clustered">Кластеризованный</option>
-                            </select>
-                            <select id="word_type" lang="en">
-                                <option value="Uniform">Uniform</option>
-                                <option value="Linear">Linear</option>
-                                <option selected value="Clustered">Clustered</option>
+                            <label class="center-label" translated_text_id="world_type"></label>
+                            <select id="word_type">
+                                <option selected value="Clustered" translated_text_id="clustered"></option>
+                                <option value="Uniform" translated_text_id="uniform"></option>
+                                <option value="Linear" translated_text_id="linear"></option>
                             </select>
                         </div>
                         <div class="grid">
-                            <label class="center-label" lang="ru" title="описание">Число кластеров</label>
-                            <label class="center-label" lang="en" title="descriptor">Number of clusters</label>
+                            <label class="center-label" translated_text_id="number_of_clusters"></label>
                             <input type="text" id="cluster_cnt"></input>
                         </div>
                     </div>
-                    <label class="center-label" lang="en">Rules</label>
-                    <label class="center-label" lang="ru">Правила</label>
+                    <label class="center-label" translated_text_id="rules"></label>
                     <div style="padding-left:28px;">
                         <div class="grid">
-                            <label class="center-label" lang="ru" title="описание">Максимальное число комманд за
-                                цикл</label>
-                            <label class="center-label" lang="en" title="descriptor">Maximum number of commands per
-                                cycle</label>
+                            <label class="center-label" translated_text_id="max_cmd_per_cycle"></label>
                             <input type="text" id="max_commands_per_cycle"></input>
                         </div>
                         <div class="grid">
-                            <label class="center-label" lang="ru" title="описание">Рассход энергия за деление</label>
-                            <label class="center-label" lang="en" title="descriptor">Energy consumption per
-                                split</label>
+                            <label class="center-label" translated_text_id="energy_per_split"></label>
                             <input type="text" id="energy_for_split"></input>
                         </div>
                         <div class="grid">
-                            <label class="center-label" lang="ru" title="описание">Энергия от Солцна</label>
-                            <label class="center-label" lang="en" title="descriptor">Energy from the Sun</label>
+                            <label class="center-label" translated_text_id="energy_per_sun"></label>
                             <input type="text" id="energy_per_sun"></input>
                         </div>
                         <div class="grid">
-                            <label class="center-label" lang="ru" title="описание">Энергия от минералов</label>
-                            <label class="center-label" lang="en" title="descriptor">Energy from the minerals</label>
+                            <label class="center-label" translated_text_id="energy_per_minerals"></label>
                             <input type="text" id="energy_per_mineral"></input>
                         </div>
                         <div class="grid">
-                            <label class="center-label" lang="ru" title="описание">Рассход энергии за шаг</label>
-                            <label class="center-label" lang="en" title="descriptor">Energy consumption per step</label>
+                            <label class="center-label" translated_text_id="energy_per_step"></label>
                             <input type="text" id="energy_per_step"></input>
                         </div>
                         <div class="grid">
-                            <label class="center-label" lang="ru" title="описание">Штраф к энергии за возраст</label>
-                            <label class="center-label" lang="en" title="descriptor">Penalty to energy for the
-                                age</label>
+                            <label class="center-label" translated_text_id="age_debuf"></label>
                             <input type="text" id="age_per_energy_penalty"></input>
                         </div>
                         <div class="grid">
-                            <label class="center-label" lang="ru" title="описание">Энергия на старте</label>
-                            <label class="center-label" lang="en" title="descriptor">Start energy</label>
+                            <label class="center-label" translated_text_id="start_energy"></label>
                             <input type="text" id="start_energy"></input>
                         </div>
                         <div class="grid">
-                            <label class="center-label" lang="ru" title="описание">Поглощение энергии при укусе</label>
-                            <label class="center-label" lang="en" title="descriptor">Energy consumption with
-                                bite</label>
+                            <label class="center-label" translated_text_id="energy_per_byte"></label>
                             <input type="text" id="on_bite_energy_delimiter"></input>
                         </div>
                         <div class="grid">
-                            <label class="center-label" lang="ru" title="описание">Максимум энергии</label>
-                            <label class="center-label" lang="en" title="descriptor">Maximum energy</label>
+                            <label class="center-label" translated_text_id="max_energy"></label>
                             <input type="text" id="max_energy"></input>
                         </div>
                         <div class="grid">
-                            <label class="center-label" lang="ru" title="При мутации бота может появиться команда со случайным константным аргументом, это максимальное значение такого аргумента">
-                                Максимальное случайное значение
-                            </label>
-                            <label class="center-label" lang="en" title="During mutation of a bot, a command with random constant argument may appear, this is the maximum value of such argument">
-                                Maximum random value
-                            </label>
+                            <label class="center-label" translated_text_id="max_rand_val"></label>
                             <input type="text" id="max_random_value"></input>
                         </div>
                         <div class="grid">
-                            <label class="center-label" lang="ru" title="описание">Вероятность мутации</label>
-                            <label class="center-label" lang="en" title="descriptor">Mutation probability</label>
+                            <label class="center-label" translated_text_id="mut_ver"></label>
                             <input type="text" id="mutation_ver"></input>
                         </div>
                         <div class="grid">
-                            <label class="center-label" lang="ru" title="описание">Коэффициент свободного места</label>
-                            <label class="center-label" lang="en" title="descriptor">Free space coefficient</label>
+                            <label class="center-label" translated_text_id="free_space_boots"></label>
                             <input type="text" id="energy_per_sun_free_boost"></input>
                         </div>
                         <div class="grid">
-                            <label class="center-label" lang="ru" title="описание">Коэффициент колонии</label>
-                            <label class="center-label" lang="en" title="descriptor">Colony coefficient</label>
+                            <label class="center-label" translated_text_id="colony_boots"></label>
                             <input type="text" id="energy_per_sun_bro_boost"></input>
                         </div>
                         <div class="grid">
-                            <label class="center-label" lang="ru" title="описание">Коэффициент соседства</label>
-                            <label class="center-label" lang="en" title="descriptor">Neighbor coefficient</label>
+                            <label class="center-label" translated_text_id="bot_boots"></label>
                             <input type="text" id="energy_per_sun_oth_boost"></input>
                         </div>
                     </div>
@@ -186,65 +150,34 @@
 
                 <div role="group">
                     <button id="create_word" class="important-button">
-                        <span lang="en">Create world</span>
-                        <span lang="ru">Создать мир</span>
+                        <span translated_text_id="create_world"></span>
                     </button>
                     <button id="start_btn" class="disabled-button">
-                        <span lang="en">Start</span>
-                        <span lang="ru">Старт</span>
+                        <span translated_text_id="start_btn"></span>
                     </button>
                 </div>
-                <div role="group">
-                    <label for="fps" class="center-label">FPS</label>
-                    <span>&nbsp;</span>
-                    <span>&nbsp;</span>
-                    <input type="number" id="fps" name="fps" min="1" max="1000" value="100">
-                    <span>&nbsp;</span>
-                    <span>&nbsp;</span>
-                    <label for="coler_ru" lang="ru" class="center-label">Режим отрисовки</label>
-                    <span lang="ru">&nbsp;</span>
-                    <span lang="ru">&nbsp;</span>
-                    <select id="coler_ru" lang="ru">
-                        <option value="0">Колония</option>
-                        <option value="1">Геном</option>
-                        <option value="2">Возраст</option>
-                        <option value="3">Энергия</option>
-                        <option value="4">Красный</option>
-                        <option value="5">Зелёный</option>
-                        <option value="6">Синий</option>
+                <div role="group" style="vertical-align: middle;">
+                    <label for="fps" class="center-label" style="margin-right: 1rem;">FPS</label>
+                    <input type="number" id="fps" name="fps" min="1" max="1000" value="100" style="margin-right: 1rem;">
+                    <label for="coler_ru" class="center-label" translated_text_id="drawing_mode" style="margin-right: 1rem;"></label>
+                    <select id="coler" style="margin-right: 1rem;">
+                        <option value="0" translated_text_id="colony"></option>
+                        <option value="1" translated_text_id="genome"></option>
+                        <option value="2" translated_text_id="age"></option>
+                        <option value="3" translated_text_id="energy"></option>
+                        <option value="4" translated_text_id="red"></option>
+                        <option value="5" translated_text_id="green"></option>
+                        <option value="6" translated_text_id="blue"></option>
                     </select>
-                    <label for="coler_en" lang="en" class="center-label">Drawing mode</label>
-                    <span>&nbsp;</span>
-                    <span>&nbsp;</span>
-                    <select id="coler_en" lang="en">
-                        <option value="0">Colony</option>
-                        <option value="1">Genome</option>
-                        <option value="2">Age</option>
-                        <option value="3">Energy</option>
-                        <option value="4">Red</option>
-                        <option value="5">Green</option>
-                        <option value="6">Blue</option>
-                    </select>
-                    <span>&nbsp;</span>
-                    <label for="action_ru" lang="ru" class="center-label">ЛКМ</label>
-                    <span>&nbsp;</span>
-                    <span>&nbsp;</span>
-                    <select id="action_ru" lang="ru">
-                        <option value="place">Создать бота</option>
-                        <option value="take">Захватить геном</option>
-                    </select>
-                    <label for="action_en" lang="en" class="center-label">LMB</label>
-                    <span lang="en">&nbsp;</span>
-                    <span lang="en">&nbsp;</span>
-                    <select id="action_en" lang="en">
-                        <option value="place">Create a bot</option>
-                        <option value="take">Catch a genome</option>
+                    <label for="action" class="center-label" translated_text_id="lmb" style="margin-right: 1rem;"></label>
+                    <select id="action">
+                        <option value="place" translated_text_id="create_bot" ></option>
+                        <option value="take" translated_text_id="catch_genome" ></option>
                     </select>
                 </div>
                 <div role="group">
                     <label for="bot_code" class="center-label">
-                        <span lang="en">Bot's code</span>
-                        <span lang="ru">Код бота</span>
+                        <span translated_text_id="bot_code"></span>
                     </label>
                     <input type="text" id="bot_code" name="bot_code"
                         value="4XH4CCIAGAEAJQJDESCHZA2YR765OYBRD34BA23QMEFFQQ5GYN6NVZBH74PSUQLP2GSQA">

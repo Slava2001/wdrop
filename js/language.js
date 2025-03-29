@@ -17,6 +17,41 @@ async function loadTextsTable() {
     ])
 }
 
+/**
+ * Set HTML element translated text.
+ * @param {*} elem HTML element to set text.
+ * @param {*} text_id translated text id.
+ * @param {*} lang language (by default current selected language)
+ */
+function setElemTranslatedText(elem, text_id, lang = current_lang) {
+    elem.setAttribute("translated_text_id", text_id);
+    updateTranslatedText(elem, lang);
+}
+
+/**
+ * Returns elem translated text id.
+ * @param {*} elem HTML element to get text id.
+ */
+function getElemTranslatedText(elem) {
+    return elem.getAttribute("translated_text_id");
+}
+
+/**
+ * Returns text by translated text id.
+ * @param {*} text_id translated text id.
+ * @param {*} lang language (by default current selected language)
+ */
+function getTranslatedText(text_id, lang = current_lang) {
+    let text = "Error: unsupported language, language: " + lang;
+    if (TEXT_TABLE[lang]) {
+        text = "Error: not translated, lang: " + lang + " text id: " + text_id;
+        if (TEXT_TABLE[lang][text_id]) {
+            text = TEXT_TABLE[lang][text_id];
+        }
+    }
+    return text;
+}
+
 function parseTextsTable(csv_text_table) {
     const lines = csv_text_table.split('\n');
     const headers = lines[0].split(',');
@@ -45,27 +80,9 @@ function selectLanguage(language) {
     setCookie('language', language, 7);
 }
 
-/**
- * Set HTML element translated text.
- * @param {*} elem HTML element to set text.
- * @param {*} text_id translated text id.
- * @param {*} lang language (by default current selected language)
- */
-function setElemTranslatedText(elem, text_id, lang = current_lang) {
-    elem.setAttribute("translated_text_id", text_id);
-    updateTranslatedText(elem, lang);
-}
-
 function updateTranslatedText(elem, lang) {
     let text_id = elem.getAttribute("translated_text_id");
-    let text = "Error: unsupported language, language: " + lang;
-    if (TEXT_TABLE[lang]) {
-        text = "Error: not translated, lang: " + lang + " text id: " + text_id;
-        if (TEXT_TABLE[lang][text_id]) {
-            text = TEXT_TABLE[lang][text_id];
-        }
-    }
-    elem.innerHTML = text;
+    elem.innerHTML = getTranslatedText(text_id, lang);
 }
 
 function updateLanguage(language) {
