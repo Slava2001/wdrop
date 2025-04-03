@@ -61,7 +61,7 @@
 
     <script type="module">
         import botc_init, { compile as botc_compile, decompile as botc_decompile } from './botc/botc.js';
-        await botc_init({module_or_path: './botc/botc_bg.wasm'});
+        await botc_init({module_or_path: 'botc/botc_bg.wasm'});
         async function run_botc() {
             const input_code = editor.getValue();
             if (input_code.trim() == "") {
@@ -90,7 +90,7 @@
 
         const go = new Go();
         let wasmInstance;
-        WebAssembly.instantiate(fetch("./nilang/nilang.wasm"), go.importObject).then(result => {
+        WebAssembly.instantiate(fetch("nilang/nilang.wasm"), go.importObject).then(result => {
             wasmInstance = result.instance;
             go.run(wasmInstance);
         });

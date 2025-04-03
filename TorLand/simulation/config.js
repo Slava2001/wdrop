@@ -67,7 +67,6 @@ function init_sim_config() {
 
 function set_config(cfg) {
     let input = (config, name) => {
-        console.log(name);
         let input = document.getElementById(name)
         input.value = config[name]
     }
