@@ -60,8 +60,13 @@
     </script>
 
     <script type="module">
+        console.log("initing compilers")
+
         import botc_init, { compile as botc_compile, decompile as botc_decompile } from './botc/botc.js';
+        console.log("initing botc")
+
         await botc_init({module_or_path: 'botc/botc_bg.wasm'});
+        console.log("inited botc")
         async function run_botc() {
             const input_code = editor.getValue();
             if (input_code.trim() == "") {
@@ -88,6 +93,7 @@
         }
         document.getElementById("decompile_btn").addEventListener('click', run_decompile);
 
+        console.log("befor go")
         const go = new Go();
         let wasmInstance;
         console.log("Start initing")
