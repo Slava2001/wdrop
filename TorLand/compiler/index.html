@@ -90,7 +90,7 @@
 
         const go = new Go();
         let wasmInstance;
-        WebAssembly.instantiateStreaming(fetch("nilang/nilang.wasm"), go.importObject).then(result => {
+        WebAssembly.instantiateStreaming(fetch("./nilang/nilang.wasm"), go.importObject).then(result => {
             wasmInstance = result.instance;
             go.run(wasmInstance);
         });
