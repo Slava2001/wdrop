@@ -96,6 +96,9 @@
         });
 
         async function nilang_run() {
+            if (!compile) {
+                document.getElementById("output").value = "The compiler is not ready yet, try again in a second";
+            }
             let input_code =  nilang_editor.getValue();
 
             editor.setValue("");
