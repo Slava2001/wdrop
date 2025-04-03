@@ -90,12 +90,16 @@
 
         const go = new Go();
         let wasmInstance;
+        console.log("Start initing")
         WebAssembly.instantiateStreaming(fetch("nilang/nilang.wasm"), go.importObject).then(result => {
+            console.log("fetched")
             wasmInstance = result.instance;
             go.run(wasmInstance);
+            console.log("ready")
         });
 
         async function nilang_run() {
+            console.log("run")
             if (!compile) {
                 document.getElementById("output").value = "The compiler is not ready yet, try again in a second";
             }
