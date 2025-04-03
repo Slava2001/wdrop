@@ -65,8 +65,15 @@
 
         botc_init({module_or_path: 'botc/botc_bg.wasm'}).then(rc => {
             document.getElementById("compile_btn").classList.remove("disabled-button");
+            document.getElementById("decompile_btn").classList.remove("disabled-button");
+            run_botc_ready = true;
         });
+
+        var run_botc_ready = false;
         async function run_botc() {
+            if (!run_botc_ready) {
+                return
+            }
             const input_code = editor.getValue();
             if (input_code.trim() == "") {
                 document.getElementById("output").value = "Empty input";
@@ -82,6 +89,9 @@
         document.getElementById("compile_btn").addEventListener('click', run_botc);
 
         async function run_decompile() {
+            if (!run_botc_ready) {
+                return
+            }
             const output_code = botc_decompile(document.getElementById("bot_code").value)
             if (output_code.includes("Failed")) {
                 document.getElementById("output").value = output_code;
@@ -98,9 +108,14 @@
             wasmInstance = result.instance;
             go.run(wasmInstance);
             document.getElementById("nilang_compile_btn").classList.remove("disabled-button");
+            nilang_run_ready = true;
         });
 
+        var nilang_run_ready = false;
         async function nilang_run() {
+            if (!nilang_run_ready) {
+                return
+            }
             if (!compile) {
                 document.getElementById("output").value = "The compiler is not ready yet, try again in a second";
             }
@@ -144,7 +159,7 @@
                     style="font-size: 3rem; object-fit: contain;"></i>
                 <i id="paste_button" class="si-arrow-circle-down clickable responsive_container"
                     style="font-size: 3rem; object-fit: contain;"></i>
-                <button id="decompile_btn" class="important-button"
+                <button class="disabled-button" id="decompile_btn" class="important-button"
                     style="margin-left: 5px; display: inline; border-top-left-radius: var(--pico-border-radius); border-bottom-left-radius: var(--pico-border-radius);">
                     <span translated_text_id = "decompile"></span>
                 </button>
