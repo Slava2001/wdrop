@@ -60,7 +60,7 @@ CodeMirror.defineMode("NiLang", function () {
                 if (NI_TYPES.includes(word)) {
                     return "type";
                 }
-                
+
                 if (NI_LOGIC.includes(word)) {
                     return "operator";
                 }
@@ -87,10 +87,11 @@ CodeMirror.defineMode("NiLang", function () {
                 case "$":
                 case ">":
                 case "<":
+                case "%":
                   return "operator"
                 case ":":
                     let another_one = stream.peek()
-                    if (another_one == ":") 
+                    if (another_one == ":")
                         {
                             stream.next()
                             return "property"
