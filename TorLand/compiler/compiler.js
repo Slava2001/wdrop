@@ -30,6 +30,19 @@ const KEYWORDS = {
         'ldv': ['RwReg', 'Val'],
         'ldr': ['Mem', 'Reg'],
         'ldm': ['RwReg', 'Mem'],
+        'neg': ['RwReg'],
+        'add': ['RwReg', 'Reg'],
+        'addv': ['RwReg', 'Val'],
+        'sub': ['RwReg', 'Reg'],
+        'subv': ['RwReg', 'Val'],
+        'mul': ['RwReg', 'Reg'],
+        'mulv': ['RwReg', 'Val'],
+        'div': ['RwReg', 'Reg'],
+        'divv': ['RwReg', 'Val'],
+        'mod': ['RwReg', 'Reg'],
+        'modv': ['RwReg', 'Val'],
+        'pow': ['RwReg', 'Reg'],
+        'powv': ['RwReg', 'Val']
     },
     'Dir': {
         'values': ['front', 'frontright', 'right', 'backright', 'back', 'backleft', 'left', 'frontleft'],
@@ -172,7 +185,7 @@ function botlang_init() {
         lineNumbers: true,
         mode: 'BotLang',
         theme: 'dracula',
-        height: 'auto', 
+        height: 'auto',
         lineWrapping: true,
     });
 

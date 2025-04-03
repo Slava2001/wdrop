@@ -28,6 +28,7 @@
     <script type="text/javascript" src="./codemirror/show-hint.js"></script>
     <script type="text/javascript" src="./compiler.js"></script>
     <script type="text/javascript" src="./nilang.js"></script>
+    <script src="nilang/wasm_exec.js"></script>
 
     <script type="text/javascript">
         let editor = null
@@ -59,34 +60,58 @@
     </script>
 
     <script type="module">
-        import init, { compile, decompile } from './botc/botc.js';
-        await init('./botc/botc_bg.wasm');
-        async function run() {
+        import botc_init, { compile as botc_compile, decompile as botc_decompile } from './botc/botc.js';
+        await botc_init({module_or_path: './botc/botc_bg.wasm'});
+        async function run_botc() {
             const input_code = editor.getValue();
             if (input_code.trim() == "") {
-                document.getElementById("output").value = "Empty imput";
+                document.getElementById("output").value = "Empty input";
                 return;
             }
-            document.getElementById("output").value = compile(input_code);
+            let compiler_rc = botc_compile(input_code);
+            const prefix = "Compiled successfully.\nBot Code:\n";
+            if (compiler_rc.startsWith(prefix)) {
+                document.getElementById("bot_code").value = compiler_rc.slice(prefix.length);
+            }
+            document.getElementById("output").value = compiler_rc
         }
-        document.getElementById("compile_btn").addEventListener('click', run);
-
-        async function nilang_run() {
-            // TODO Use actual NiLang compiler here
-            const nilang_code = nilang_editor.getValue();
-            editor.setValue(nilang_code);
-        }
-        document.getElementById("nilang_compile_btn").addEventListener('click', nilang_run);
+        document.getElementById("compile_btn").addEventListener('click', run_botc);
 
         async function run_decompile() {
-            const output_code = decompile(document.getElementById("bot_code").value)
+            const output_code = botc_decompile(document.getElementById("bot_code").value)
             if (output_code.includes("Failed")) {
                 document.getElementById("output").value = output_code;
             } else {
                 editor.setValue(output_code);
+                nilang_editor.setValue("");
             }
         }
         document.getElementById("decompile_btn").addEventListener('click', run_decompile);
+
+        const go = new Go();
+        let wasmInstance;
+        WebAssembly.instantiateStreaming(fetch("nilang/nilang.wasm"), go.importObject).then(result => {
+            wasmInstance = result.instance;
+            go.run(wasmInstance);
+        });
+
+        async function nilang_run() {
+            let input_code =  nilang_editor.getValue();
+
+            editor.setValue("");
+            if (input_code.trim() == "") {
+                document.getElementById("output").value = "Empty input";
+                return;
+            }
+            let [isError, result] = await compile(input_code);
+            if (isError) {
+                document.getElementById("output").value = "Error: \n" + result;
+            } else {
+                editor.setValue(result);
+                run_botc()
+            }
+        }
+        document.getElementById("nilang_compile_btn").addEventListener('click', nilang_run);
     </script>
 </head>
 
