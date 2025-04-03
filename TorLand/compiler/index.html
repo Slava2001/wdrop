@@ -60,13 +60,12 @@
     </script>
 
     <script type="module">
-        console.log("initing compilers")
 
         import botc_init, { compile as botc_compile, decompile as botc_decompile } from './botc/botc.js';
-        console.log("initing botc")
 
-        await botc_init({module_or_path: 'botc/botc_bg.wasm'});
-        console.log("inited botc")
+        botc_init({module_or_path: 'botc/botc_bg.wasm'}).then(rc => {
+            document.getElementById("compile_btn").classList.remove("disabled-button");
+        });
         async function run_botc() {
             const input_code = editor.getValue();
             if (input_code.trim() == "") {
@@ -93,19 +92,15 @@
         }
         document.getElementById("decompile_btn").addEventListener('click', run_decompile);
 
-        console.log("befor go")
         const go = new Go();
         let wasmInstance;
-        console.log("Start initing")
         WebAssembly.instantiateStreaming(fetch("nilang/nilang.wasm"), go.importObject).then(result => {
-            console.log("fetched")
             wasmInstance = result.instance;
             go.run(wasmInstance);
-            console.log("ready")
+            document.getElementById("nilang_compile_btn").classList.remove("disabled-button");
         });
 
         async function nilang_run() {
-            console.log("run")
             if (!compile) {
                 document.getElementById("output").value = "The compiler is not ready yet, try again in a second";
             }
@@ -158,7 +153,7 @@
             <div class="grid">
                 <div>
                     <div style="padding-bottom: 5px;">
-                        <button id="nilang_compile_btn" style="display: inline">
+                        <button class="disabled-button" id="nilang_compile_btn" style="display: inline">
                             <span translated_text_id = "compile"></span>
                         </button>
 
@@ -181,7 +176,7 @@
                 <div>
                     <div class="compile_ctl">
                         <div style="padding-bottom: 5px;">
-                            <button id="compile_btn" style="display: inline">
+                            <button class="disabled-button" id="compile_btn" style="display: inline">
                                 <span translated_text_id = "compile"></span>
                             </button>
 
