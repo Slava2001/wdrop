@@ -15,7 +15,9 @@ const NI_STATEMENTS = {
     'Dir': ['front', 'frontRight', 'right', 'backRight', 'back', 'backLeft', 'left', 'frontLeft'],
     'Bools': ['False', 'True'],
     'Logic': ['And', 'Or', 'Not'],
-    'Builtin': ['dir', 'bot', 'Split', 'Fork', 'Bite', 'ConsumeSunlight', 'AbsorbMinerals', 'IsEmpty', 'IsSibling', 'IsFriend', 'GetLuminosity', 'GetMineralization', 'Sleep', 'Move', 'Face'],
+    'Builtin': ['dir', 'bot', 'Split', 'Fork', 'Bite', 'ConsumeSunlight', 'AbsorbMinerals',
+        'IsEmpty', 'IsSibling', 'IsFriend', 'GetLuminosity', 'GetMineralization', 'Sleep',
+        'Move', 'Face', 'GetAge', 'GetEnergy', 'IsMemoryReady', 'ReadMemory', 'WriteMemory'],
     'Types': ['Int', 'Bool', 'Dir']
 };
 
@@ -88,15 +90,14 @@ CodeMirror.defineMode("NiLang", function () {
                 case ">":
                 case "<":
                 case "%":
-                  return "operator"
+                    return "operator"
                 case ":":
                     let another_one = stream.peek()
-                    if (another_one == ":")
-                        {
-                            stream.next()
-                            return "property"
-                        }
-              }
+                    if (another_one == ":") {
+                        stream.next()
+                        return "property"
+                    }
+            }
             return null;
         }
     };
