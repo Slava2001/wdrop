@@ -132,8 +132,8 @@ function get_config() {
         "mutation_ver":  ${input("mutation_ver", 0.1)},
         "energy_per_sun_free_boost":  ${input("energy_per_sun_free_boost", 5)},
         "energy_per_sun_bro_boost":  ${input("energy_per_sun_bro_boost", 10)},
-        "energy_per_sun_oth_boost":  ${input("energy_per_sun_oth_boost", -2)}
-        "ram_size":  ${input("ram_size", 100)}
+        "energy_per_sun_oth_boost":  ${input("energy_per_sun_oth_boost", -2)},
+        "ram_size":  ${input("ram_size", 100)},
         "stack_size":  ${input("stack_size", 100)}
         }
     }
