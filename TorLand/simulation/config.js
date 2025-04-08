@@ -20,7 +20,9 @@ const default_sim_cfg = `
         "mutation_ver": 0.1,
         "energy_per_sun_free_boost": 5,
         "energy_per_sun_bro_boost": 10,
-        "energy_per_sun_oth_boost": -2
+        "energy_per_sun_oth_boost": -2,
+        "ram_size": 100,
+        "stack_size": 100
     }
 }
 `
@@ -63,6 +65,8 @@ function init_sim_config() {
     set("energy_per_sun_free_boost")
     set("energy_per_sun_bro_boost")
     set("energy_per_sun_oth_boost")
+    set("ram_size")
+    set("stack_size")
 }
 
 function set_config(cfg) {
@@ -92,6 +96,8 @@ function set_config(cfg) {
     input(cfg["rules"], "energy_per_sun_free_boost")
     input(cfg["rules"], "energy_per_sun_bro_boost")
     input(cfg["rules"], "energy_per_sun_oth_boost")
+    input(cfg["rules"], "ram_size")
+    input(cfg["rules"], "stack_size")
 }
 
 function get_config() {
@@ -127,6 +133,8 @@ function get_config() {
         "energy_per_sun_free_boost":  ${input("energy_per_sun_free_boost", 5)},
         "energy_per_sun_bro_boost":  ${input("energy_per_sun_bro_boost", 10)},
         "energy_per_sun_oth_boost":  ${input("energy_per_sun_oth_boost", -2)}
+        "ram_size":  ${input("ram_size", 100)}
+        "stack_size":  ${input("stack_size", 100)}
         }
     }
     `

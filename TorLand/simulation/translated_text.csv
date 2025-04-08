@@ -40,3 +40,5 @@ blue,Синий,Blue
 create_bot,Создать бота,Create a bot
 catch_genome,Захватить геном,Catch a genome
 invalid_bot_code, Не удалось создать бота: задан невалидный код бота, Failed to create bot: specified invalid bot code
+ram_size,Размер ОЗУ,RAM size
+stack_size,Размер стека,Stack size

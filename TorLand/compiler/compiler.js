@@ -11,6 +11,8 @@ const KEYWORDS = {
         'jml': ['Lable'],
         'jle': ['Lable'],
         'jge': ['Lable'],
+        'jmo': ['Lable'],
+        'jno': ['Lable'],
         'jmb': ['Lable'],
         'jnb': ['Lable'],
         'jmc': ['Lable'],

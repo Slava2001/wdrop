@@ -36,7 +36,7 @@
             const default_code = document.getElementById("default_genome_button");
             default_code.addEventListener("click", () => {
                 code = document.getElementById("bot_code")
-                code.value = '4XH4CCIAGAEAJQJDESCHZA2YR765OYBRD34BA23QMEFFQQ5GYN6NVZBH74PSUQLP2GSQA'
+                code.value = '5XB4CCIAAAEAEQDJRBUNYRRP6DQRA6TQBONLJXN7EADQ'
                 setCookie("bot_code", code.value, 3);
             });
 
@@ -144,6 +144,14 @@
                         <div class="grid">
                             <label class="center-label" translated_text_id="bot_boots"></label>
                             <input type="text" id="energy_per_sun_oth_boost">
+                        </div>
+                        <div class="grid">
+                            <label class="center-label" translated_text_id="ram_size"></label>
+                            <input type="text" id="ram_size">
+                        </div>
+                        <div class="grid">
+                            <label class="center-label" translated_text_id="stack_size"></label>
+                            <input type="text" id="stack_size">
                         </div>
                     </div>
                 </div>
