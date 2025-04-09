@@ -8,7 +8,7 @@
          url('/css/fonts/Hermit-BoldItalic.otf');
 }
 
-.CodeMirror {
+/* .CodeMirror {
     height: 60vh !important;
     width:  100%;
 }
@@ -19,4 +19,4 @@
 
 .CodeMirror-hints * {
     font-family: Hermit;
-}
+} */
