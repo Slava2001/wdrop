@@ -13,7 +13,7 @@ cluster_cnt,Число кластеров,Number of clusters
 rules,Правила,Rules
 max_commands_per_cycle,Максимальное число комманд за цикл,Maximum number of commands per cycle
 energy_for_split,Рассход энергия за деление,Energy consumption per split
-energy_per_sun,Энергия от Солцна,Energy from the Sun
+energy_per_sun,Энергия от Солнца,Energy from the Sun
 energy_per_mineral,Энергия от минералов,Energy from the minerals
 energy_per_step,Рассход энергии за шаг,Energy consumption per step
 age_per_energy_penalty,Штраф к энергии за возраст,Penalty to energy for the age

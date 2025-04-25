@@ -28,7 +28,7 @@ const default_sim_cfg = `
 `
 
 function init_sim_config() {
-    set_config(JSON.parse(default_sim_cfg))
+    set_default_config()
 
     let set = (name) => {
         let input = document.getElementById(name);
@@ -67,6 +67,10 @@ function init_sim_config() {
     set("energy_per_sun_oth_boost")
     set("ram_size")
     set("stack_size")
+}
+
+function set_default_config() {
+    set_config(JSON.parse(default_sim_cfg))
 }
 
 function set_config(cfg) {

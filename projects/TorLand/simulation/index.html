@@ -40,6 +40,11 @@
                 setCookie("bot_code", code.value, 3);
             });
 
+            const default_sim_cfg = document.getElementById("default_sin_cfg_button");
+            default_sim_cfg.addEventListener("click", () => {
+                set_default_config()
+            });
+
             init_sim_config()
         }
     </script>
@@ -135,15 +140,15 @@
                         </div>
                         <div class="grid">
                             <label class="center-label" translated_text_id="energy_per_sun_free_boost"></label>
-                            <input type="number" min="0" max="100000" id="energy_per_sun_free_boost">
+                            <input type="number" min="-100000" max="100000" id="energy_per_sun_free_boost">
                         </div>
                         <div class="grid">
                             <label class="center-label" translated_text_id="energy_per_sun_bro_boost"></label>
-                            <input type="number" min="0" max="100000" id="energy_per_sun_bro_boost">
+                            <input type="number" min="-100000" max="100000" id="energy_per_sun_bro_boost">
                         </div>
                         <div class="grid">
                             <label class="center-label" translated_text_id="energy_per_sun_oth_boost"></label>
-                            <input type="number" min="0" max="100000" id="energy_per_sun_oth_boost">
+                            <input type="number" min="-100000" max="100000" id="energy_per_sun_oth_boost">
                         </div>
                         <div class="grid">
                             <label class="center-label" translated_text_id="ram_size"></label>
@@ -194,6 +199,8 @@
                     <i id="paste_button" class="si-arrow-circle-down clickable responsive_container"
                         style="font-size: 3rem; object-fit: contain;"></i>
                     <i id="default_genome_button" class="si-dna clickable responsive_container"
+                        style="font-size: 3rem; object-fit: contain;"></i>
+                    <i id="default_sin_cfg_button" class="si-globe clickable responsive_container"
                         style="font-size: 3rem; object-fit: contain;"></i>
                 </div>
             </div>
