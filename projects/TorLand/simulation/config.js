@@ -105,6 +105,14 @@ function get_config() {
     let input = (name, default_value) => {
         let input = document.getElementById(name)
         if (input.value) {
+            if (input.value > Number(input.max) || input.value < Number(input.min)) {
+                throw new Error(
+                    getTranslatedText("invalid_sim_cfg_msg")
+                        .replaceAll("[NAME]", getTranslatedText(name))
+                        .replaceAll("[MIN]", input.min)
+                        .replaceAll("[MAX]", input.max)
+                );
+            }
             return input.value
         }
         return default_value

@@ -4,27 +4,27 @@ start_btn,Старт,Start
 stop_btn,Стоп,Stop
 bot_code,Код бота,Bot's code
 world,Мир,World
-max_illum,Максимальная освещённость,Maximal illumination
-max_miner,Максимальная минерализация,Maximal mineralization
+sun_max_lvl,Максимальная освещённость,Maximal illumination
+mineral_max_lvl,Максимальная минерализация,Maximal mineralization
 height,Высота,Height
 width,Ширина,Width
 world_type,Тип мира,World type
-number_of_clusters,Число кластеров,Number of clusters
+cluster_cnt,Число кластеров,Number of clusters
 rules,Правила,Rules
-max_cmd_per_cycle,Максимальное число комманд за цикл,Maximum number of commands per cycle
-energy_per_split,Рассход энергия за деление,Energy consumption per split
+max_commands_per_cycle,Максимальное число комманд за цикл,Maximum number of commands per cycle
+energy_for_split,Рассход энергия за деление,Energy consumption per split
 energy_per_sun,Энергия от Солцна,Energy from the Sun
-energy_per_minerals,Энергия от минералов,Energy from the minerals
+energy_per_mineral,Энергия от минералов,Energy from the minerals
 energy_per_step,Рассход энергии за шаг,Energy consumption per step
-age_debuf,Штраф к энергии за возраст,Penalty to energy for the age
+age_per_energy_penalty,Штраф к энергии за возраст,Penalty to energy for the age
 start_energy,Энергия на старте,Start energy
-energy_per_byte,Поглощение энергии при укусе,Energy consumption with bite
+on_bite_energy_delimiter,Поглощение энергии при укусе,Energy consumption with bite
 max_energy,Максимум энергии,Maximum energy
-max_rand_val,Максимальное случайное значение,Maximum random value
-mut_ver,Вероятность мутации,Mutation probability
-free_space_boots,Коэффициент свободного места,Free space coefficient
-colony_boots,Коэффициент колонии,Colony coefficient
-bot_boots,Коэффициент соседства,Neighbor coefficient
+max_random_value,Максимальное случайное значение,Maximum random value
+mutation_ver,Вероятность мутации,Mutation probability
+energy_per_sun_free_boost,Коэффициент свободного места,Free space coefficient
+energy_per_sun_bro_boost,Коэффициент колонии,Colony coefficient
+energy_per_sun_oth_boost,Коэффициент соседства,Neighbor coefficient
 drawing_mode,Режим,Mode
 lmb,ЛКМ,LMB
 uniform,Равномерный,Uniform
@@ -42,3 +42,4 @@ catch_genome,Захватить геном,Catch a genome
 invalid_bot_code, Не удалось создать бота: задан невалидный код бота, Failed to create bot: specified invalid bot code
 ram_size,Размер ОЗУ,RAM size
 stack_size,Размер стека,Stack size
+invalid_sim_cfg_msg,Параметр "[NAME]" вне допустимого диапазона: [MIN]-[MAX],Parameter "[NAME]" is out of range: [MIN]-[MAX]

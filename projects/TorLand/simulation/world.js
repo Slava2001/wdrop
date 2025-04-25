@@ -35,11 +35,10 @@ function run() {
     const context = canvas.getContext('2d');
     context.clearRect(0, 0, canvas.width, canvas.height);
 
-    let cfg = JSON.parse(get_config());
-
-    world_size_x = cfg["width"];
-    world_size_y = cfg["height"];
     try {
+        let cfg = JSON.parse(get_config());
+        world_size_x = cfg["width"];
+        world_size_y = cfg["height"];
         world = WorldWraper.new(JSON.stringify(cfg));
     } catch (e) {
         alert(e);
