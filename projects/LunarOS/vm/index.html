@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8" />
+    <title>wdrop</title>
+    <link rel="stylesheet" type="text/css" href="/css/pico/pico.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/flag-icon.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/siimple-icons.css">
+    <link rel="stylesheet" type="text/css" href="/css/main.css">
+    <link rel="stylesheet" type="text/css" href="./style.css">
+
+    <script type="text/javascript" src="/js/jquerry-3.7.1.min.js"></script>
+    <script type="text/javascript" src="/js/page.js"></script>
+    <script type="text/javascript" src="/js/language.js"></script>
+    <script type="text/javascript" src="/js/cookies.js"></script>
+    <script type="text/javascript" src="/js/theme.js"></script>
+
+    <script src="./v86/libv86.js"></script>
+    <script type="text/javascript">
+        function onLoadPage() {
+            onLoad();
+            var emulator = new V86({
+                wasm_path: "./v86/v86.wasm",
+                bios: { url: "./v86/seabios.bin" },
+                vga_bios: { url: "./v86/vgabios.bin" },
+                hda: { url: "./v86/lunar_os.img" },
+                memory_size: 32 * 1024 * 1024,
+                vga_memory_size: 2 * 1024 * 1024,
+                screen_container: document.getElementById("screen"),
+                autostart: true,
+            });
+        }
+        window.onload = onLoadPage
+    </script>
+</head>
+
+<body>
+    <header id="header"></header>
+    <section style="display: flex; justify-content: center;">
+        <div id="screen">
+            <div></div>
+            <canvas></canvas>
+        </div>
+    </section>
+    <div style="flex-grow:1"></div>
+    <footer id="footer"></footer>
+</body>
+
+</html>
