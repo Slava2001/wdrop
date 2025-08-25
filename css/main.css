@@ -15,10 +15,6 @@
         url('fonts/Rubik-BlackItalic.ttf');
 }
 
-* {
-    font-family: 'Rubik';
-}
-
 html {
     font-size: 14px;
 }
@@ -35,21 +31,12 @@ body {
     flex-direction: column;
 }
 
-.center-label {
-    display: flex;
-    align-items: center;
-}
-
 .responsive_container:hover {
     transform: scale(1.1, 1.1);
     -ms-transform: scale(1.1, 1.1);
-    /* IE 9 */
     -webkit-transform: scale(1.1, 1.1);
-    /* Safari and Chrome */
     -o-transform: scale(1.1, 1.1);
-    /* Opera */
     -moz-transform: scale(1.1, 1.1);
-    /* Firefox */
 }
 
 .humble,
@@ -72,41 +59,6 @@ body {
 
 .clickable {
     cursor: pointer
-}
-
-.important-button {
-    background-color: red;
-    --pico-border-color: darkred;
-}
-
-.important-button:hover {
-    background-color: darkred;
-    --pico-primary-hover-border: rgb(88, 51, 23);
-}
-
-.start-button {
-    background-color: green;
-    --pico-border-color: darkgreen;
-}
-
-.start-button:hover {
-    background-color: darkgreen;
-    --pico-primary-hover-border: rgb(3, 65, 56);
-}
-
-.stop-button {
-    background-color: yellowgreen;
-    --pico-border-color: teal;
-}
-
-.stop-button:hover {
-    background-color: darkcyan;
-    --pico-primary-hover-border: rgb(3, 65, 56);
-}
-
-.disabled-button {
-    background-color: gainsboro;
-    --pico-border-color: darkslategray;
 }
 
 .inverted img.svg-inverted {

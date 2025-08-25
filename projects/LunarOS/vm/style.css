@@ -1,14 +1,20 @@
 #screen {
-    border: 3px solid grey;
+    width: 48rem;
+    height: 25rem;
 }
 
 #screen > div {
+    width: 100% !important;
+    height: 100% !important;
     font: 1rem;
     line-height: 1rem;
     white-space: pre;
     white-space-collapse: preserve;
+    font-family: 'Courier New', Courier, monospace;
 }
 
 #screen > canvas {
+    width: 100% !important;
+    height: 100% !important;
     display: none;
 }
