@@ -24,7 +24,7 @@
                 wasm_path: "./v86/v86.wasm",
                 bios: { url: "./v86/seabios.bin" },
                 vga_bios: { url: "./v86/vgabios.bin" },
-                hda: { url: "./v86/lunar_os.img" },
+                hda: { url: "./v86/lunar_os.img", async: true },
                 memory_size: 32 * 1024 * 1024,
                 vga_memory_size: 2 * 1024 * 1024,
                 screen_container: document.getElementById("screen"),
